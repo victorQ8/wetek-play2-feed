@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "recorded_at": "2026-10-22",
-  "purpose": "Pinned sources for the WeTek Play 2 compatible Python plugin catalog; opkg supplies GPL-2.0 license text",
+  "purpose": "Pinned compatible plugin sources; opkg supplies GPL-2.0 license text",
   "sources": [
     {
       "name": "plugin-addstreamurl",

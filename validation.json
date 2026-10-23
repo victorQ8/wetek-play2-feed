@@ -127,7 +127,44 @@
     "persistent_root": true,
     "base_plugin_protection": true,
     "dynamic_catalog_unit_checks": true,
-    "public_refresh": "pending receiver verification",
-    "reboot": "pending"
+    "public_refresh": "Passed: four-package firmware seed accepted 28-package HTTPS catalog",
+    "reboot": "Passed: fresh internal software boot with SD absent retained catalog, database, core plugins and settings",
+    "dependency_install": "OpenWebif removal/reinstall automatically fetched Cheetah",
+    "stock_browser": "27 Enigma packages displayed; remove/reinstall passed",
+    "postboot_install_remove": "New HTTPS Tetris install and removal passed after reboot",
+    "available_download_entries": 23
+  },
+  "payload_integrity": {
+    "plugin_files": 1243,
+    "runtime_entries": 11162,
+    "mismatches": 0
+  },
+  "postboot": {
+    "user_plugins": 26,
+    "helper_dependencies": 2,
+    "runtime_entries": 11162,
+    "core_plugin_files": 661,
+    "persistent_catalog": true,
+    "persistent_settings": true,
+    "persistent_logs": true,
+    "youtube_key_survived_without_restore": true,
+    "native_three_fixtures": true,
+    "youtube_1080p60_pause_seek": true,
+    "https_install_remove_after_reboot": true,
+    "openwebif_volume_remote_control": true,
+    "no_new_crash_logs": true,
+    "physical_power_cycle_tested": false
+  },
+  "installed_core": [
+    "AddStreamUrl",
+    "OpenWebif",
+    "EPGImport",
+    "M3UIPTV",
+    "Cheetah (dependency)"
+  ],
+  "internal_update": {
+    "boot_readbacks": 2,
+    "system_readbacks": 2,
+    "protected_boot_recovery_unchanged": true
   }
 }

@@ -63,9 +63,11 @@ def build(output, reuse=None):
             index.append(next(s for s in stanzas if s.startswith('Package: ' + plugin['package'] + '\n')) + '\n')
             archive = plugin['source'] + '-' + entry['commit'] + '.tar.gz'
             shutil.copyfile(reuse / 'sources' / archive, output / 'sources' / archive)
-            old_patches = reuse / 'patches' / plugin['module']
+            old_patches = reuse / 'patches/plugins' / plugin['module']
+            if not old_patches.exists():
+                old_patches = reuse / 'patches' / plugin['module']
             if old_patches.exists():
-                shutil.copytree(old_patches, output / 'patches' / plugin['module'])
+                shutil.copytree(old_patches, output / 'patches/plugins' / plugin['module'])
             provenance.append(metadata)
             continue
         module = plugin['module']
@@ -111,7 +113,7 @@ def build(output, reuse=None):
                 for name, data in payload.items():
                     if name.endswith('.py'):
                         ast.parse(data, filename=name)
-            patchdir = output / 'patches' / module
+            patchdir = output / 'patches/plugins' / module
             patchdir.mkdir(parents=True)
             for patch in patches:
                 (patchdir / patch.name).write_bytes(patch.read_bytes())
@@ -145,6 +147,18 @@ def build(output, reuse=None):
     (output / 'README.md').write_text((ROOT / 'feed/README.md').read_text())
     shutil.copyfile(ROOT / 'feed/exclusions.json', output / 'exclusions.json')
     shutil.copytree(ROOT / 'feed/licenses', output / 'licenses')
+    # Ship a rebuildable recipe layout alongside the original source archives.
+    (output / 'tools').mkdir()
+    shutil.copyfile(Path(__file__), output / 'tools/build-plugin-feed.py')
+    shutil.copyfile(ROOT / 'tools/sources.py', output / 'tools/sources.py')
+    for name in ('catalog.json', 'README.md', 'exclusions.json'):
+        shutil.copyfile(ROOT / 'feed' / name, output / 'feed' / name)
+    shutil.copytree(ROOT / 'feed/licenses', output / 'feed/licenses')
+    names = {p['source'] for p in catalog['plugins']} | {'opkg'}
+    lock = json.loads((ROOT / 'sources.lock.json').read_text())
+    lock['sources'] = [s for s in lock['sources'] if s['name'] in names]
+    lock['purpose'] = 'Pinned compatible plugin sources; opkg supplies GPL-2.0 license text'
+    (output / 'sources.lock.json').write_text(json.dumps(lock, indent=2) + '\n')
     return provenance
 
 
