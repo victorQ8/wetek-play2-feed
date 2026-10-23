@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-23",
+  "target": "WeTek Play 2 S905 GXBB",
+  "python": "3.13",
+  "phase": "Local feed on the receiver; public HTTPS and reboot checks pending",
+  "imports": [
+    "AddStreamUrl",
+    "EPGSearch",
+    "EPGRefresh",
+    "AutoTimer"
+  ],
+  "screens": [
+    "LiveStreamingLinks",
+    "EPGSearch",
+    "EPGRefreshConfiguration",
+    "AutoTimerOverview"
+  ],
+  "stock_browser_catalog": [
+    "enigma2-plugin-extensions-addstreamurl",
+    "enigma2-plugin-extensions-autotimer",
+    "enigma2-plugin-extensions-epgrefresh",
+    "enigma2-plugin-extensions-epgsearch"
+  ],
+  "stock_browser_remove": true,
+  "stock_browser_reinstall": true,
+  "complete": true,
+  "live_satellite_tv_validated": false,
+  "recording_validated": false,
+  "iptv_provider_playback_validated": false
+}

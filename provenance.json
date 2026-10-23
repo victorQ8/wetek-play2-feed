@@ -1,0 +1,66 @@
+[
+  {
+    "source": {
+      "name": "plugin-addstreamurl",
+      "url": "https://github.com/oe-alliance-plugins/AddStreamUrl.git",
+      "ref": "main observed 2026-10-23",
+      "commit": "473053ae2cdd9e8f45200babea0f4c1cb425dd6c",
+      "role": "Compatible plugin feed source; receiver validation recorded separately"
+    },
+    "license": "GPL-3.0-or-later",
+    "packager_sha256": "5f6bea28c2fcca885c56c84d729a768e9200eea81bad0bfe47c4d34750c63743",
+    "patches": {
+      "0001-https-choice.patch": "62e4fd275e003d641d8a5d1d47da645a05026b2493d81bae7745e70af26faab5"
+    },
+    "package": "enigma2-plugin-extensions-addstreamurl",
+    "version": "1.0+git473053ae2cdd-wetek1",
+    "sha256": "8b5baa4f2c6643e29536ff445ac97cab6b7f22d995f10d76ef5528e6adaaa6fe"
+  },
+  {
+    "source": {
+      "name": "plugin-epgsearch",
+      "url": "https://github.com/oe-alliance-plugins/EPGSearch.git",
+      "ref": "main observed 2026-10-23",
+      "commit": "64e48161570dc65a1a4959a414439b0490025fab",
+      "role": "Compatible plugin feed source; receiver validation recorded separately"
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "packager_sha256": "5f6bea28c2fcca885c56c84d729a768e9200eea81bad0bfe47c4d34750c63743",
+    "patches": {
+      "0001-no-playing-service.patch": "557c9556f2f5699ca06e069c0197c32aea5495938e6c85be45796e5d9861f4d5"
+    },
+    "package": "enigma2-plugin-extensions-epgsearch",
+    "version": "3.0+git64e48161570d-wetek1",
+    "sha256": "46a18fd6e81602611280f23527df3708eaa95e0e337c90ffb439058be63d2718"
+  },
+  {
+    "source": {
+      "name": "plugin-epgrefresh",
+      "url": "https://github.com/oe-alliance-plugins/EPGRefresh.git",
+      "ref": "main observed 2026-10-23",
+      "commit": "71911ad38e8bc82f6a3e1f19ca479c39071277a5",
+      "role": "Compatible plugin feed source; receiver validation recorded separately"
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "packager_sha256": "5f6bea28c2fcca885c56c84d729a768e9200eea81bad0bfe47c4d34750c63743",
+    "patches": {},
+    "package": "enigma2-plugin-extensions-epgrefresh",
+    "version": "3.0+git71911ad38e8b-wetek1",
+    "sha256": "e9e7bc95b7a2abf00f525d247dcb088db234d6b06b65024ed73383a0d45efaa2"
+  },
+  {
+    "source": {
+      "name": "plugin-autotimer",
+      "url": "https://github.com/oe-alliance-plugins/AutoTimer.git",
+      "ref": "main observed 2026-10-23",
+      "commit": "8b7e54fd6987711c2abcba34c8c6d0ab7cfb8a11",
+      "role": "Compatible plugin feed source; receiver validation recorded separately"
+    },
+    "license": "CC-BY-NC-SA-3.0",
+    "packager_sha256": "5f6bea28c2fcca885c56c84d729a768e9200eea81bad0bfe47c4d34750c63743",
+    "patches": {},
+    "package": "enigma2-plugin-extensions-autotimer",
+    "version": "3.0+git8b7e54fd6987-wetek1",
+    "sha256": "cfca66e946d0eebe17e7c188fd196eff9df3a53b4df70ef6c8d8ce47cb22a7de"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-22",
+  "purpose": "Pinned source audit inputs; not a complete firmware dependency lock",
+  "sources": [
+    {
+      "name": "plugin-addstreamurl",
+      "url": "https://github.com/oe-alliance-plugins/AddStreamUrl.git",
+      "ref": "main observed 2026-10-23",
+      "commit": "473053ae2cdd9e8f45200babea0f4c1cb425dd6c",
+      "role": "Compatible plugin feed source; receiver validation recorded separately"
+    },
+    {
+      "name": "plugin-epgsearch",
+      "url": "https://github.com/oe-alliance-plugins/EPGSearch.git",
+      "ref": "main observed 2026-10-23",
+      "commit": "64e48161570dc65a1a4959a414439b0490025fab",
+      "role": "Compatible plugin feed source; receiver validation recorded separately"
+    },
+    {
+      "name": "plugin-epgrefresh",
+      "url": "https://github.com/oe-alliance-plugins/EPGRefresh.git",
+      "ref": "main observed 2026-10-23",
+      "commit": "71911ad38e8bc82f6a3e1f19ca479c39071277a5",
+      "role": "Compatible plugin feed source; receiver validation recorded separately"
+    },
+    {
+      "name": "plugin-autotimer",
+      "url": "https://github.com/oe-alliance-plugins/AutoTimer.git",
+      "ref": "main observed 2026-10-23",
+      "commit": "8b7e54fd6987711c2abcba34c8c6d0ab7cfb8a11",
+      "role": "Compatible plugin feed source; receiver validation recorded separately"
+    }
+  ]
+}

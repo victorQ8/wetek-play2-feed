@@ -1,0 +1,39 @@
+{
+  "abi": "wetekpy313",
+  "api_version": "20261023",
+  "url": "https://raw.githubusercontent.com/victorQ8/wetek-play2-feed/main/feed/py313-v1",
+  "plugins": [
+    {
+      "source": "plugin-addstreamurl",
+      "package": "enigma2-plugin-extensions-addstreamurl",
+      "module": "AddStreamUrl",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Add stream URLs to your channel bouquets"
+    },
+    {
+      "source": "plugin-epgsearch",
+      "package": "enigma2-plugin-extensions-epgsearch",
+      "module": "EPGSearch",
+      "version": "3.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Search programme titles in the electronic programme guide"
+    },
+    {
+      "source": "plugin-epgrefresh",
+      "package": "enigma2-plugin-extensions-epgrefresh",
+      "module": "EPGRefresh",
+      "version": "3.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Schedule guide refreshes from configured television services"
+    },
+    {
+      "source": "plugin-autotimer",
+      "package": "enigma2-plugin-extensions-autotimer",
+      "module": "AutoTimer",
+      "version": "3.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Create recording timers from programme matching rules"
+    }
+  ]
+}

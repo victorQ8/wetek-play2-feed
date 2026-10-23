@@ -1,0 +1,12 @@
+Subject: [WeTek] Offer HTTPS when adding a stream URL
+
+--- a/plugin.py
++++ b/plugin.py
+@@ -25,6 +25,7 @@
+ 
+ 		self.list = []
+ 		self.list.append('http://')
++		self.list.append('https://')
+ 		self.list.append('rtmp://')
+ 		self.list.append('rtsp://')
+ 		self.list.append('mms://')

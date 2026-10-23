@@ -1,0 +1,16 @@
+Subject: [WeTek] Open EPG search when no service is playing
+
+Avoid dereferencing a missing service reference on an idle receiver.
+
+--- a/plugin.py
++++ b/plugin.py
+@@ -16,7 +16,8 @@
+ 		event = info.getEvent(0)  # 0 = now, 1 = next
+ 		name = event and event.getEventName() or ''
+ 	else:
+-		name = session.nav.getCurrentlyPlayingServiceReference().toString()
++		ref = session.nav.getCurrentlyPlayingServiceReference()
++		name = ref.toString() if ref is not None else ""
+ 		name = name.split('/')
+ 		name = name[-1]
+ 		name = name.replace('.', ' ')

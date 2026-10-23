@@ -1,0 +1,60 @@
+Package: enigma2-plugin-extensions-addstreamurl
+Version: 1.0+git473053ae2cdd-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Add stream URLs to your channel bouquets
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/AddStreamUrl
+Installed-Size: 41
+Filename: enigma2-plugin-extensions-addstreamurl_1.0+git473053ae2cdd-wetek1_wetekpy313.ipk
+Size: 15300
+SHA256sum: 8b5baa4f2c6643e29536ff445ac97cab6b7f22d995f10d76ef5528e6adaaa6fe
+
+Package: enigma2-plugin-extensions-epgsearch
+Version: 3.0+git64e48161570d-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Search programme titles in the electronic programme guide
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/EPGSearch
+Installed-Size: 298
+Filename: enigma2-plugin-extensions-epgsearch_3.0+git64e48161570d-wetek1_wetekpy313.ipk
+Size: 45242
+SHA256sum: 46a18fd6e81602611280f23527df3708eaa95e0e337c90ffb439058be63d2718
+
+Package: enigma2-plugin-extensions-epgrefresh
+Version: 3.0+git71911ad38e8b-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Schedule guide refreshes from configured television services
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/EPGRefresh
+Installed-Size: 283
+Filename: enigma2-plugin-extensions-epgrefresh_3.0+git71911ad38e8b-wetek1_wetekpy313.ipk
+Size: 63136
+SHA256sum: e9e7bc95b7a2abf00f525d247dcb088db234d6b06b65024ed73383a0d45efaa2
+
+Package: enigma2-plugin-extensions-autotimer
+Version: 3.0+git8b7e54fd6987-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Create recording timers from programme matching rules
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/AutoTimer
+Installed-Size: 1800
+Filename: enigma2-plugin-extensions-autotimer_3.0+git8b7e54fd6987-wetek1_wetekpy313.ipk
+Size: 468102
+SHA256sum: cfca66e946d0eebe17e7c188fd196eff9df3a53b4df70ef6c8d8ce47cb22a7de
+
