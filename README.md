@@ -16,3 +16,12 @@ Package installation and screen checks do not establish satellite reception,
 IPTV-provider compatibility or successful recordings. See validation.json for
 actual receiver test results. This feed contains no firmware, credentials or
 receiver-specific settings.
+
+## On the receiver
+
+Open **Menu → Plugins → green (Download Plugins) → Extension Packages**.
+The initial catalog contains AddStreamUrl, AutoTimer, EPGRefresh and EPGSearch.
+Installed packages appear under the red Remove Plugins action. The integrated
+installer retains plugins and the package database across reboot. Package and
+menu checks passed over this public HTTPS feed after a software reboot; see
+[validation.json](validation.json) for the exact scope.

@@ -23,10 +23,24 @@
   "date": "2026-10-23",
   "target": "WeTek Play 2 S905 GXBB",
   "python": "3.13",
-  "phase": "Receiver checks passed over the public HTTPS feed; full reboot check pending",
+  "phase": "Passed on internal firmware after software reboot with SD absent",
   "https_downloads": true,
   "checksum_architecture_dependency_rejection": true,
   "live_satellite_tv_validated": false,
   "recording_validated": false,
-  "iptv_provider_playback_validated": false
+  "iptv_provider_playback_validated": false,
+  "package_files_verified_after_reboot": 161,
+  "plugin_database_persistent": true,
+  "plugin_payloads_persistent": true,
+  "software_reboot_tested": true,
+  "physical_power_cycle_tested": false,
+  "green_button_downloads": [
+    "enigma2-plugin-extensions-autotimer",
+    "enigma2-plugin-extensions-epgrefresh",
+    "enigma2-plugin-extensions-epgsearch"
+  ],
+  "gui_restart_tested": true,
+  "native_generated_transport_playback": true,
+  "youtube_1080p60_pause_seek": true,
+  "no_new_enigma2_crash_log": true
 }
