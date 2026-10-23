@@ -1,46 +1,133 @@
 {
-  "imports": [
-    "AddStreamUrl",
-    "EPGSearch",
-    "EPGRefresh",
-    "AutoTimer"
-  ],
-  "screens": [
-    "LiveStreamingLinks",
-    "EPGSearch",
-    "EPGRefreshConfiguration",
-    "AutoTimerOverview"
-  ],
-  "stock_browser_catalog": [
-    "enigma2-plugin-extensions-addstreamurl",
-    "enigma2-plugin-extensions-autotimer",
-    "enigma2-plugin-extensions-epgrefresh",
-    "enigma2-plugin-extensions-epgsearch"
-  ],
-  "stock_browser_remove": true,
-  "stock_browser_reinstall": true,
-  "complete": true,
-  "date": "2026-10-23",
-  "target": "WeTek Play 2 S905 GXBB",
+  "device": "WeTek Play 2 S905/GXBB",
   "python": "3.13",
-  "phase": "Passed on internal firmware after software reboot with SD absent",
-  "https_downloads": true,
-  "checksum_architecture_dependency_rejection": true,
-  "live_satellite_tv_validated": false,
-  "recording_validated": false,
-  "iptv_provider_playback_validated": false,
-  "package_files_verified_after_reboot": 161,
-  "plugin_database_persistent": true,
-  "plugin_payloads_persistent": true,
-  "software_reboot_tested": true,
-  "physical_power_cycle_tested": false,
-  "green_button_downloads": [
-    "enigma2-plugin-extensions-autotimer",
-    "enigma2-plugin-extensions-epgrefresh",
-    "enigma2-plugin-extensions-epgsearch"
+  "user_plugins": 26,
+  "helper_dependencies": 2,
+  "scope": "Receiver import/entry-screen checks plus selected functional integration checks",
+  "screens": {
+    "AddStreamUrl": {
+      "ok": true,
+      "screen": "LiveStreamingLinks"
+    },
+    "EPGSearch": {
+      "ok": true,
+      "screen": "EPGSearch"
+    },
+    "EPGRefresh": {
+      "ok": true,
+      "screen": "EPGRefreshConfiguration"
+    },
+    "AutoTimer": {
+      "ok": true,
+      "screen": "AutoTimerOverview"
+    },
+    "IMDb": {
+      "ok": true,
+      "screen": "IMDB"
+    },
+    "SimpleRSS": {
+      "ok": true,
+      "screen": "RSS_Setup"
+    },
+    "PiconManager": {
+      "ok": true,
+      "screen": "PiconManagerScreen"
+    },
+    "MovieTagger": {
+      "ok": true,
+      "screen": "MovieTagger"
+    },
+    "MovieManager": {
+      "ok": true,
+      "screen": "MovieManager"
+    },
+    "Series2Folder": {
+      "ok": true,
+      "screen": "Series2FolderConfig"
+    },
+    "InfoBarTunerState": {
+      "ok": true,
+      "screen": "InfoBarTunerStateConfiguration"
+    },
+    "PermanentClock": {
+      "ok": true,
+      "screen": "PermanentClockMenu"
+    },
+    "ShowClock": {
+      "ok": true,
+      "screen": "ShowClockSetup"
+    },
+    "ZapHistoryBrowser": {
+      "ok": true,
+      "screen": "ZapHistoryBrowser"
+    },
+    "ZapStatistic": {
+      "ok": true,
+      "screen": "ZapStatisticScreen"
+    },
+    "WerbeZapper": {
+      "ok": true,
+      "screen": "WerbeZapperChoiceBox"
+    },
+    "Sudoku": {
+      "ok": true,
+      "screen": "Sudoku"
+    },
+    "Tetris": {
+      "ok": true,
+      "screen": "Board"
+    },
+    "eSame": {
+      "ok": true,
+      "screen": "eSame"
+    },
+    "WakeOnLan": {
+      "ok": true,
+      "screen": "WakeOnLanConfig"
+    },
+    "EPGExport": {
+      "ok": true,
+      "screen": "EPGExportConfiguration"
+    },
+    "RemoteChannelStreamConverter": {
+      "ok": true,
+      "screen": "StreamingChannelFromServerScreen"
+    },
+    "Partnerbox": {
+      "ok": true,
+      "screen": "PartnerboxSettings"
+    },
+    "OpenWebif": {
+      "ok": true,
+      "screen": "OpenWebifConfig"
+    },
+    "EPGImport": {
+      "ok": true,
+      "screen": "EPGImportConfig"
+    },
+    "M3UIPTV": {
+      "ok": true,
+      "screen": "M3UIPTVManagerConfig"
+    }
+  },
+  "functional_checks": {
+    "OpenWebif": "HTTP UI, nine JS/CSS assets, about/current service/timer/service-list APIs returned HTTP 200 on the receiver LAN",
+    "IMDb": "The Matrix search returned 25 matches including the 1999 film",
+    "SimpleRSS": "RSS fixture parsing and HTML-to-readable-text passed",
+    "M3UIPTV": "Generated an actual 4097 channel bouquet from M3U; HTTP H.264/MP2 playback reached EOF at 1280x720/25; pause held",
+    "EPGImport": "Generated XMLTV programme imported and found through eEPGCache.lookupEventTime"
+  },
+  "limits": [
+    "HTTP MPEG-TS seek position check failed; this is not validated as reliable seeking/catch-up",
+    "No new RF lock, live DVB viewing or recording proof",
+    "Partner receiver and third-party IPTV provider credentials not available; setup screens checked",
+    "4K/VP9/AV1, transcoding and HbbTV are not added by these plugins"
   ],
-  "gui_restart_tested": true,
-  "native_generated_transport_playback": true,
-  "youtube_1080p60_pause_seek": true,
-  "no_new_enigma2_crash_log": true
+  "package_manager": {
+    "persistent_root": true,
+    "base_plugin_protection": true,
+    "dynamic_catalog_unit_checks": true,
+    "public_refresh": "pending receiver verification",
+    "reboot": "pending"
+  }
 }

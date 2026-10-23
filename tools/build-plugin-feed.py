@@ -8,6 +8,7 @@ import io
 import json
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import tarfile
 import tempfile
@@ -35,7 +36,7 @@ def ar_bytes(files):
     return out
 
 
-def build(output):
+def build(output, reuse=None):
     catalog = json.loads((ROOT / 'feed/catalog.json').read_text())
     locked = {s['name']: s for s in json.loads((ROOT / 'sources.lock.json').read_text())['sources']}
     output.mkdir(parents=True, exist_ok=False)
@@ -43,35 +44,63 @@ def build(output):
     feed.mkdir(parents=True)
     (output / 'sources').mkdir()
     index, provenance = [], []
+    previous = json.loads((reuse / 'catalog.json').read_text()) if reuse else {'plugins': []}
+    previous_provenance = json.loads((reuse / 'provenance.json').read_text()) if reuse else []
     for plugin in catalog['plugins']:
         source = ROOT / 'sources' / plugin['source']
         entry = locked[plugin['source']]
         subprocess.run(['python3', str(ROOT / 'tools/sources.py'), 'verify', plugin['source']], check=True)
+        if plugin in previous['plugins']:
+            metadata = next(p for p in previous_provenance if p['package'] == plugin['package'])
+            patches = sorted((ROOT / 'patches/plugins' / plugin['module']).glob('*.patch'))
+            if metadata['source'] != entry or metadata['patches'] != {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in patches}:
+                raise ValueError('Changed published inputs require a package release bump: ' + plugin['package'])
+            filename = f"{plugin['package']}_{metadata['version']}_{catalog['abi']}.ipk"
+            old = reuse / 'feed/py313-v1' / filename
+            assert hashlib.sha256(old.read_bytes()).hexdigest() == metadata['sha256']
+            shutil.copyfile(old, feed / filename)
+            stanzas = (reuse / 'feed/py313-v1/Packages').read_text().strip().split('\n\n')
+            index.append(next(s for s in stanzas if s.startswith('Package: ' + plugin['package'] + '\n')) + '\n')
+            archive = plugin['source'] + '-' + entry['commit'] + '.tar.gz'
+            shutil.copyfile(reuse / 'sources' / archive, output / 'sources' / archive)
+            old_patches = reuse / 'patches' / plugin['module']
+            if old_patches.exists():
+                shutil.copytree(old_patches, output / 'patches' / plugin['module'])
+            provenance.append(metadata)
+            continue
         module = plugin['module']
         assert re.fullmatch(r'[A-Za-z][A-Za-z0-9_]*', module)
-        assert plugin['package'].startswith('enigma2-plugin-extensions-')
+        group = plugin.get('group', 'Extensions')
+        assert group in ('Extensions', 'SystemPlugins', 'Python')
+        prefix_base = 'usr/lib/python3/dist-packages/' if group == 'Python' else 'usr/lib/enigma2/python/Plugins/' + group + '/'
+        package_prefix = 'wetek-python3-' if group == 'Python' else 'enigma2-plugin-' + group.lower() + '-'
+        assert re.fullmatch(re.escape(package_prefix) + r'[a-z0-9][a-z0-9+-]*', plugin['package'])
+        source_dir = source / plugin.get('source_dir', 'src/' + module)
+        assert source_dir.resolve().is_relative_to(source.resolve())
         payload = {}
-        for path in sorted((source / 'src' / module).rglob('*')):
+        for path in sorted(source_dir.rglob('*')):
             if path.is_dir():
                 continue
             if path.is_symlink() or not path.is_file():
                 raise ValueError(f'Unexpected source node: {path}')
-            rel = path.relative_to(source / 'src' / module)
-            if '__pycache__' in rel.parts or path.suffix in ('.pyc', '.pyo'):
+            rel = path.relative_to(source_dir)
+            if '__pycache__' in rel.parts or path.suffix in ('.pyc', '.pyo') or any(str(rel) == v or str(rel).startswith(v + '/') for v in plugin.get('exclude', [])):
                 continue
             data = path.read_bytes()
             if data.startswith(b'\x7fELF') or path.suffix == '.so':
                 raise ValueError(f'Native file in Python feed: {path}')
             if path.suffix == '.py':
                 ast.parse(data, filename=str(path))
-            payload[PREFIX + module + '/' + str(rel)] = data
-        assert PREFIX + module + '/plugin.py' in payload
-        payload[PREFIX + module + '/UPSTREAM-LICENSE.txt'] = (source / 'LICENSE.txt').read_bytes()
+            payload[prefix_base + module + '/' + str(rel)] = data
+        assert prefix_base + module + ('/__init__.py' if group == 'Python' else '/plugin.py') in payload
+        payload[prefix_base + module + '/UPSTREAM-LICENSE.txt'] = (source / plugin.get('license_file', 'LICENSE.txt')).read_bytes()
+        if plugin['license'] == 'GPL-2.0-only':
+            payload[prefix_base + module + '/LICENSE-GPL-2.0.txt'] = (ROOT / 'feed/licenses/GPL-2.0.txt').read_bytes()
         patches = sorted((ROOT / 'patches/plugins' / module).glob('*.patch'))
         if patches:
             with tempfile.TemporaryDirectory(prefix='wetek-plugin-') as temp:
                 exported = Path(temp)
-                prefix = PREFIX + module + '/'
+                prefix = prefix_base + module + '/'
                 for name, data in payload.items():
                     dest = exported / name.removeprefix(prefix)
                     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -88,11 +117,12 @@ def build(output):
                 (patchdir / patch.name).write_bytes(patch.read_bytes())
         metadata = {'source': entry, 'license': plugin['license'], 'packager_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                     'patches': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in patches}}
-        payload[PREFIX + module + '/wetek-provenance.json'] = (json.dumps(metadata, indent=2) + '\n').encode()
-        version = plugin['version'] + '+git' + entry['commit'][:12] + '-wetek1'
+        payload[prefix_base + module + '/wetek-provenance.json'] = (json.dumps(metadata, indent=2) + '\n').encode()
+        version = plugin['version'] + '+git' + entry['commit'][:12] + '-wetek' + str(plugin.get('release', 1))
+        dependencies = ', '.join(['wetek-enigma2-api (= ' + catalog['api_version'] + ')'] + plugin.get('depends', []))
         control = (f"Package: {plugin['package']}\nVersion: {version}\nArchitecture: {catalog['abi']}\n"
                    f"Maintainer: WeTek Play 2 community port\nSection: enigma2\nPriority: optional\n"
-                   f"Depends: wetek-enigma2-api (= {catalog['api_version']})\n"
+                   f"Depends: {dependencies}\n"
                    f"Description: {plugin['description']}\nLicense: {plugin['license']}\n"
                    f"Homepage: {entry['url'].removesuffix('.git')}\n"
                    f"Installed-Size: {(sum(map(len, payload.values())) + 1023) // 1024}\n")
@@ -106,33 +136,21 @@ def build(output):
     packages = ('\n'.join(index) + '\n').encode()
     (feed / 'Packages').write_bytes(packages)
     (feed / 'Packages.gz').write_bytes(gzip.compress(packages, mtime=0))
+    catalog['schema'] = 2
+    catalog['packages_sha256'] = hashlib.sha256(packages).hexdigest()
+    (feed / 'catalog-v2.json').write_text(json.dumps(catalog, indent=2) + '\n')
     (output / 'catalog.json').write_text(json.dumps(catalog, indent=2) + '\n')
     (output / 'provenance.json').write_text(json.dumps(provenance, indent=2) + '\n')
     (output / 'build-plugin-feed.py').write_bytes(Path(__file__).read_bytes())
-    (output / 'README.md').write_text('''# WeTek Play 2 experimental Enigma2 plugin feed
-
-Curated Python 3.13 plugins for the custom S905/GXBB runtime. This is not an
-OpenATV release or a general OpenATV feed. Packages require wetek-enigma2-api
-20261023. Do not add this feed to other receivers or firmware.
-
-Browse `feed/py313-v1/Packages` for package descriptions. `provenance.json`
-records exact upstream revisions; complete source exports are in `sources/`.
-Each plugin carries its original license and authorship notices. AddStreamUrl
-is GPLv3; AutoTimer, EPGSearch and EPGRefresh are CC BY-NC-SA 3.0 with the
-upstream alternative license clause. This feed is distributed without charge
-for noncommercial use; those three plugins must not be commercially distributed
-outside their upstream license terms. Refer to each included LICENSE.txt.
-
-Package installation and screen checks do not establish satellite reception,
-IPTV-provider compatibility or successful recordings. See validation.json for
-actual receiver test results. This feed contains no firmware, credentials or
-receiver-specific settings.
-''')
+    (output / 'README.md').write_text((ROOT / 'feed/README.md').read_text())
+    shutil.copyfile(ROOT / 'feed/exclusions.json', output / 'exclusions.json')
+    shutil.copytree(ROOT / 'feed/licenses', output / 'licenses')
     return provenance
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--reuse', type=Path, help='Reuse identical published package versions byte for byte')
     args = parser.parse_args()
-    print(json.dumps(build(args.output), indent=2))
+    print(json.dumps(build(args.output, args.reuse), indent=2))

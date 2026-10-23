@@ -1,0 +1,63 @@
+--- /dev/null
++++ b/wetek_network.py
+@@ -0,0 +1,21 @@
++# SPDX-License-Identifier: GPL-3.0-or-later
++"""Read real Linux interface addresses when DHCP is managed outside Enigma2."""
++import fcntl
++import socket
++import struct
++
++
++def ipv4_interfaces():
++    addresses = []
++    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
++        for _, name in socket.if_nameindex():
++            if name == 'lo':
++                continue
++            request = struct.pack('256s', name.encode()[:15])
++            try:
++                addr = socket.inet_ntoa(fcntl.ioctl(sock.fileno(), 0x8915, request)[20:24])
++                mask = socket.inet_ntoa(fcntl.ioctl(sock.fileno(), 0x891b, request)[20:24])
++                addresses.append((addr, mask))
++            except OSError:
++                continue
++    return addresses
+--- a/httpserver.py
++++ b/httpserver.py
+@@ -32,6 +32,7 @@
+ from twisted.internet.error import CannotListenError
+ 
+ from enigma import eEnv
++from .wetek_network import ipv4_interfaces
+ from Screens.MessageBox import MessageBox
+ from Components.config import config
+ from Components.Network import iNetwork
+@@ -99,6 +100,11 @@
+ 		ip = ip + "/" + netmask
+ 		tmpaddr = str(ipaddress.IPv4Network(str(ip), strict=False))
+ 		tempaddrs.append(tmpaddr)
++
++	for addr, mask in ipv4_interfaces():
++		network = str(ipaddress.IPv4Network(addr + "/" + mask, strict=False))
++		if network not in tempaddrs:
++			tempaddrs.append(network)
+ 
+ 	if tempaddrs == []:
+ 		return None
+--- a/controllers/defaults.py
++++ b/controllers/defaults.py
+@@ -96,11 +96,13 @@
+ 
+ 
+ def getIP():
++	from ..wetek_network import ipv4_interfaces
+ 	for iface in iNetwork.getConfiguredAdapters():
+ 		ip = iNetwork.getAdapterAttribute(iface, "ip")
+ 		if ip and any(ip):  # Skip adapters without IPv4, e.g. eth0 without link
+ 			return ".".join(str(x) for x in ip)
+-	return None
++	addresses = ipv4_interfaces()
++	return addresses[0][0] if addresses else None
+ 
+ 
+ EXT_EVENT_INFO_SOURCE = getExtEventInfoProvider()

@@ -3,9 +3,257 @@
   "api_version": "20261023",
   "url": "https://raw.githubusercontent.com/victorQ8/wetek-play2-feed/main/feed/py313-v1",
   "plugins": [
-    {"source": "plugin-addstreamurl", "package": "enigma2-plugin-extensions-addstreamurl", "module": "AddStreamUrl", "version": "1.0", "license": "GPL-3.0-or-later", "description": "Add stream URLs to your channel bouquets"},
-    {"source": "plugin-epgsearch", "package": "enigma2-plugin-extensions-epgsearch", "module": "EPGSearch", "version": "3.0", "license": "CC-BY-NC-SA-3.0", "description": "Search programme titles in the electronic programme guide"},
-    {"source": "plugin-epgrefresh", "package": "enigma2-plugin-extensions-epgrefresh", "module": "EPGRefresh", "version": "3.0", "license": "CC-BY-NC-SA-3.0", "description": "Schedule guide refreshes from configured television services"},
-    {"source": "plugin-autotimer", "package": "enigma2-plugin-extensions-autotimer", "module": "AutoTimer", "version": "3.0", "license": "CC-BY-NC-SA-3.0", "description": "Create recording timers from programme matching rules"}
-  ]
+    {
+      "source": "plugin-addstreamurl",
+      "package": "enigma2-plugin-extensions-addstreamurl",
+      "module": "AddStreamUrl",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Add stream URLs to your channel bouquets"
+    },
+    {
+      "source": "plugin-epgsearch",
+      "package": "enigma2-plugin-extensions-epgsearch",
+      "module": "EPGSearch",
+      "version": "3.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Search programme titles in the electronic programme guide"
+    },
+    {
+      "source": "plugin-epgrefresh",
+      "package": "enigma2-plugin-extensions-epgrefresh",
+      "module": "EPGRefresh",
+      "version": "3.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Schedule guide refreshes from configured television services"
+    },
+    {
+      "source": "plugin-autotimer",
+      "package": "enigma2-plugin-extensions-autotimer",
+      "module": "AutoTimer",
+      "version": "3.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Create recording timers from programme matching rules"
+    },
+    {
+      "source": "plugin-imdb",
+      "package": "enigma2-plugin-extensions-imdb",
+      "module": "IMDb",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "query movie details from the Internet Movie Database"
+    },
+    {
+      "source": "plugin-simplerss",
+      "package": "enigma2-plugin-extensions-simplerss",
+      "module": "SimpleRSS",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "rss viewer for the enigma2 gui",
+      "depends": [
+        "enigma2-plugin-systemplugins-toolkit"
+      ]
+    },
+    {
+      "source": "plugin-piconmanager",
+      "package": "enigma2-plugin-extensions-piconmanager",
+      "module": "PiconManager",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Picon Manager by VTi"
+    },
+    {
+      "source": "plugin-movietagger",
+      "package": "enigma2-plugin-extensions-movietagger",
+      "module": "MovieTagger",
+      "version": "1.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "MovieTagger"
+    },
+    {
+      "source": "plugin-moviemanager",
+      "package": "enigma2-plugin-extensions-moviemanager",
+      "module": "MovieManager",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "MovieManager"
+    },
+    {
+      "source": "plugin-series2folder",
+      "package": "enigma2-plugin-extensions-series2folder",
+      "module": "Series2Folder",
+      "version": "1.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Move series recordings to folders"
+    },
+    {
+      "source": "plugin-infobartunerstate",
+      "package": "enigma2-plugin-extensions-infobartunerstate",
+      "module": "InfoBarTunerState",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Show the tuner state as infobar popup"
+    },
+    {
+      "source": "plugin-permanentclock",
+      "package": "enigma2-plugin-extensions-permanentclock",
+      "module": "PermanentClock",
+      "version": "1.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Shows the clock permanent on the screen"
+    },
+    {
+      "source": "plugin-showclock",
+      "package": "enigma2-plugin-extensions-showclock",
+      "module": "ShowClock",
+      "version": "1.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Push key 'Exit long' to show the clock while watching TV"
+    },
+    {
+      "source": "plugin-zaphistorybrowser",
+      "package": "enigma2-plugin-extensions-zaphistorybrowser",
+      "module": "ZapHistoryBrowser",
+      "version": "1.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Shows a list containing the zapping-history and allows user to zap to the entries or to modify them"
+    },
+    {
+      "source": "plugin-zapstatistic",
+      "package": "enigma2-plugin-extensions-zapstatistic",
+      "module": "ZapStatistic",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Shows the watched services with some statistic"
+    },
+    {
+      "source": "plugin-werbezapper",
+      "package": "enigma2-plugin-extensions-werbezapper",
+      "module": "WerbeZapper",
+      "version": "1.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Werbezapper-Plugin for Enigma2"
+    },
+    {
+      "source": "plugin-sudoku",
+      "package": "enigma2-plugin-extensions-sudoku",
+      "module": "Sudoku",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Sudoku Game FHD modded by Lululla"
+    },
+    {
+      "source": "plugin-tetris",
+      "package": "enigma2-plugin-extensions-tetris",
+      "module": "Tetris",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Tetris-Clone HD/FHD modded by Lululla"
+    },
+    {
+      "source": "plugin-esame",
+      "package": "enigma2-plugin-extensions-esame",
+      "module": "eSame",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "eSame game for enigma2"
+    },
+    {
+      "source": "plugin-wakeonlan",
+      "package": "enigma2-plugin-extensions-wakeonlan",
+      "module": "WakeOnLan",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "WakeOnLan"
+    },
+    {
+      "source": "plugin-epgexport",
+      "package": "enigma2-plugin-extensions-epgexport",
+      "module": "EPGExport",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "EPGExport Plugin"
+    },
+    {
+      "source": "plugin-remotechannelstreamconverter",
+      "package": "enigma2-plugin-extensions-remotechannelstreamconverter",
+      "module": "RemoteChannelStreamConverter",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Fetch channels from remote bouquets and make them available locally"
+    },
+    {
+      "source": "plugin-partnerbox",
+      "package": "enigma2-plugin-extensions-partnerbox",
+      "module": "Partnerbox",
+      "version": "1.0",
+      "license": "GPL-3.0-or-later",
+      "description": "Partnerbox (Remote Bouquets, Channels, Timers and TV Player)"
+    },
+    {
+      "source": "python-cheetah3",
+      "package": "wetek-python3-cheetah",
+      "module": "Cheetah",
+      "group": "Python",
+      "source_dir": "Cheetah",
+      "version": "3.4.1~a1",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "description": "Cheetah template engine for OpenWebif (pure Python)",
+      "exclude": [
+        "Tests",
+        "c",
+        "Tools",
+        "Templates"
+      ],
+      "support": true
+    },
+    {
+      "source": "plugin-openwebif",
+      "package": "enigma2-plugin-extensions-openwebif",
+      "module": "OpenWebif",
+      "source_dir": "plugin",
+      "version": "2.4.0",
+      "license": "GPL-3.0-only",
+      "license_file": "LICENSE",
+      "description": "Control the WeTek receiver from a browser on your network",
+      "depends": [
+        "wetek-python3-cheetah"
+      ]
+    },
+    {
+      "source": "plugin-xmltvimport",
+      "package": "enigma2-plugin-extensions-epgimport",
+      "module": "EPGImport",
+      "version": "1.1",
+      "license": "GPL-2.0-only",
+      "license_file": "etc/epgimport/readme.txt",
+      "description": "Import XMLTV programme guides for configured channels"
+    },
+    {
+      "source": "plugin-m3uiptv",
+      "package": "enigma2-plugin-systemplugins-m3uiptv",
+      "module": "M3UIPTV",
+      "group": "SystemPlugins",
+      "source_dir": "src",
+      "version": "1.0",
+      "license": "GPL-3.0-only",
+      "license_file": "LICENSE",
+      "description": "M3U IPTV playlists, provider configuration and channel bouquets",
+      "depends": [
+        "enigma2-plugin-extensions-epgimport"
+      ]
+    },
+    {
+      "source": "plugin-toolkit",
+      "package": "enigma2-plugin-systemplugins-toolkit",
+      "module": "Toolkit",
+      "group": "SystemPlugins",
+      "version": "1.0",
+      "license": "CC-BY-NC-SA-3.0",
+      "description": "Shared Enigma2 helpers required by SimpleRSS",
+      "support": true
+    }
+  ],
+  "schema": 2
 }

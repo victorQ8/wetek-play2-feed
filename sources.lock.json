@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "recorded_at": "2026-10-22",
-  "purpose": "Pinned source audit inputs; not a complete firmware dependency lock",
+  "purpose": "Pinned sources for the WeTek Play 2 compatible Python plugin catalog; opkg supplies GPL-2.0 license text",
   "sources": [
     {
       "name": "plugin-addstreamurl",
@@ -30,6 +30,181 @@
       "ref": "main observed 2026-10-23",
       "commit": "8b7e54fd6987711c2abcba34c8c6d0ab7cfb8a11",
       "role": "Compatible plugin feed source; receiver validation recorded separately"
+    },
+    {
+      "name": "opkg",
+      "url": "https://git.yoctoproject.org/opkg",
+      "ref": "master observed 2026-10-23",
+      "commit": "bef18f26568cd67157d415afd7f18d316139ca14",
+      "role": "Native package manager for the curated WeTek plugin feed"
+    },
+    {
+      "name": "plugin-openwebif",
+      "url": "https://github.com/oe-alliance/OpenWebif.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "49eb4aa44a9892ad598cfd801be82a64ec9ae4a6",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-imdb",
+      "url": "https://github.com/oe-alliance-plugins/IMDb.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "461dd315e15dcc2c422ed04bb99ae910f469f62a",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-simplerss",
+      "url": "https://github.com/oe-alliance-plugins/SimpleRSS.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "4a94d89c5df4d66fda6018c7eb63b45dcbf887be",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-piconmanager",
+      "url": "https://github.com/oe-alliance-plugins/PiconManager.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "5262c0fbbdfb485544db81496797be83decc95f4",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-movietagger",
+      "url": "https://github.com/oe-alliance-plugins/MovieTagger.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "55cc673e5fe97ab3e115fddf752821f6aa3ca145",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-moviemanager",
+      "url": "https://github.com/oe-alliance-plugins/MovieManager.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "2db49ddddaa5b2dcfb7cfa81a22b65f642b4670d",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-series2folder",
+      "url": "https://github.com/oe-alliance-plugins/Series2Folder.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "b4db73eac0acdc1a5cfef8d8346fe9bcca219af8",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-infobartunerstate",
+      "url": "https://github.com/oe-alliance-plugins/InfoBarTunerState.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "aa4ddd8a7b93e0463de8bca11b7c45ee5dcc7660",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-permanentclock",
+      "url": "https://github.com/oe-alliance-plugins/PermanentClock.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "e7e8d009731565ba94af367e0a473f86104f78cd",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-showclock",
+      "url": "https://github.com/oe-alliance-plugins/ShowClock.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "1fe9ade078dd4aee7b24c586f91316fe3b7fd609",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-zaphistorybrowser",
+      "url": "https://github.com/oe-alliance-plugins/ZapHistoryBrowser.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "a89e4398f39b284f354f4e0bf366553634c9fadd",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-zapstatistic",
+      "url": "https://github.com/oe-alliance-plugins/ZapStatistic.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "4529a4445ef381aec2ff5999b53fd1375350e2b9",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-werbezapper",
+      "url": "https://github.com/oe-alliance-plugins/WerbeZapper.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "d1bc63de7fa0eb457a0a5c60344a02274582e0e3",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-sudoku",
+      "url": "https://github.com/oe-alliance-plugins/Sudoku.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "c3dfff8676eb3ac198e05b3ebf99727b8b1dddf7",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-tetris",
+      "url": "https://github.com/oe-alliance-plugins/Tetris.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "416a21dc056f472955a841d641396f06de72264c",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-esame",
+      "url": "https://github.com/oe-alliance-plugins/eSame.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "3672eccff40857f1e83812c4d33f1d539f7fa215",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-wakeonlan",
+      "url": "https://github.com/oe-alliance-plugins/WakeOnLan.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "63db7bdda552ad94f885b8ebffbba79e2fbad422",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-epgexport",
+      "url": "https://github.com/oe-alliance-plugins/EPGExport.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "8224b42dd059bb7e0ea7d8063fae7d182f036219",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-remotechannelstreamconverter",
+      "url": "https://github.com/oe-alliance-plugins/RemoteChannelStreamConverter.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "1535b925defde67a878f963e03a25740b6995893",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-partnerbox",
+      "url": "https://github.com/oe-alliance-plugins/Partnerbox.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "110102d827c8daf20e03c560b1a6faa0ebfb64c6",
+      "role": "Candidate for Play 2 plugin compatibility audit; publication requires receiver validation"
+    },
+    {
+      "name": "plugin-m3uiptv",
+      "url": "https://github.com/DimitarCC/iptv-m3u-reader.git",
+      "ref": "main observed 2026-10-24",
+      "commit": "c0fa6b61ce8bc1ebc9f4c40005a3c5daf1e82707",
+      "role": "Candidate native M3U/IPTV bouquet and guide integration; validate on GXBB"
+    },
+    {
+      "name": "plugin-xmltvimport",
+      "url": "https://github.com/oe-alliance/XMLTV-Import.git",
+      "ref": "master",
+      "commit": "a32929f2d052587c81cd7700dd754583d5807865",
+      "role": "Compatible plugin feed dependency/source; validate before publication"
+    },
+    {
+      "name": "python-cheetah3",
+      "url": "https://github.com/CheetahTemplate3/cheetah3.git",
+      "ref": "master",
+      "commit": "b7c452b5531cfe8c0adb515ac3b6ff36ef9cc3b5",
+      "role": "Compatible plugin feed dependency/source; validate before publication"
+    },
+    {
+      "name": "plugin-toolkit",
+      "url": "https://github.com/oe-alliance-plugins/Toolkit.git",
+      "ref": "main",
+      "commit": "c891f398db864f60810f1208c02e95c661c36118",
+      "role": "SimpleRSS shared pure-Python helpers"
     }
   ]
 }

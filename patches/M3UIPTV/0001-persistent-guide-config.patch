@@ -1,0 +1,11 @@
+--- a/epgimport_helper.py
++++ b/epgimport_helper.py
+@@ -17,7 +17,7 @@
+ 	EPGConfig = None
+ 
+ 
+-EPGIMPORTPATH = '/etc/epgimport/'
++EPGIMPORTPATH = '/etc/enigma2/epgimport/'
+ 
+ 
+ def overwriteEPGImportEPGSourceInit():

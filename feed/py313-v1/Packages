@@ -58,3 +58,363 @@ Filename: enigma2-plugin-extensions-autotimer_3.0+git8b7e54fd6987-wetek1_wetekpy
 Size: 468102
 SHA256sum: cfca66e946d0eebe17e7c188fd196eff9df3a53b4df70ef6c8d8ce47cb22a7de
 
+Package: enigma2-plugin-extensions-imdb
+Version: 1.0+git461dd315e15d-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: query movie details from the Internet Movie Database
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/IMDb
+Installed-Size: 373
+Filename: enigma2-plugin-extensions-imdb_1.0+git461dd315e15d-wetek1_wetekpy313.ipk
+Size: 75774
+SHA256sum: 11889846a632f9449d1e92b5faccb21987e2ca0541b587165d95e787a9b684ac
+
+Package: enigma2-plugin-extensions-simplerss
+Version: 1.0+git4a94d89c5df4-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023), enigma2-plugin-systemplugins-toolkit
+Description: rss viewer for the enigma2 gui
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/SimpleRSS
+Installed-Size: 230
+Filename: enigma2-plugin-extensions-simplerss_1.0+git4a94d89c5df4-wetek1_wetekpy313.ipk
+Size: 96944
+SHA256sum: cfb181a046fef95bada41d5ba3b79a44165a2023c4f4252c9baad8b18ac8047c
+
+Package: enigma2-plugin-extensions-piconmanager
+Version: 1.0+git5262c0fbbdfb-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Picon Manager by VTi
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/PiconManager
+Installed-Size: 163
+Filename: enigma2-plugin-extensions-piconmanager_1.0+git5262c0fbbdfb-wetek1_wetekpy313.ipk
+Size: 76400
+SHA256sum: 6a48a5ce0d58e5a5eb8cf2e62fec4790ba551186aa003627e394f0ae06113724
+
+Package: enigma2-plugin-extensions-movietagger
+Version: 1.0+git55cc673e5fe9-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: MovieTagger
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/MovieTagger
+Installed-Size: 32
+Filename: enigma2-plugin-extensions-movietagger_1.0+git55cc673e5fe9-wetek1_wetekpy313.ipk
+Size: 10010
+SHA256sum: 91fa112c62f294646c6ae351c475c68fe54d29a7590800b1f3f429852841e631
+
+Package: enigma2-plugin-extensions-moviemanager
+Version: 1.0+git2db49ddddaa5-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: MovieManager
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/MovieManager
+Installed-Size: 146
+Filename: enigma2-plugin-extensions-moviemanager_1.0+git2db49ddddaa5-wetek1_wetekpy313.ipk
+Size: 41980
+SHA256sum: 5f8c6e9ad044c4ab42bb8c54e02c67122a644adc891217a90df2439d60c66de0
+
+Package: enigma2-plugin-extensions-series2folder
+Version: 1.0+gitb4db73eac0ac-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Move series recordings to folders
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/Series2Folder
+Installed-Size: 273
+Filename: enigma2-plugin-extensions-series2folder_1.0+gitb4db73eac0ac-wetek1_wetekpy313.ipk
+Size: 19906
+SHA256sum: 26ec5c7c0fca550d2f00fb92e01597634ce69d8f8ab3a36b25aadb0c14d8da7a
+
+Package: enigma2-plugin-extensions-infobartunerstate
+Version: 1.0+gitaa4ddd8a7b93-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Show the tuner state as infobar popup
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/InfoBarTunerState
+Installed-Size: 191
+Filename: enigma2-plugin-extensions-infobartunerstate_1.0+gitaa4ddd8a7b93-wetek1_wetekpy313.ipk
+Size: 56514
+SHA256sum: 74bea42606463f1ab3a2da033fb4d1ee6db30d970d04554969e3940b56fa18fd
+
+Package: enigma2-plugin-extensions-permanentclock
+Version: 1.0+gite7e8d0097315-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Shows the clock permanent on the screen
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/PermanentClock
+Installed-Size: 90
+Filename: enigma2-plugin-extensions-permanentclock_1.0+gite7e8d0097315-wetek1_wetekpy313.ipk
+Size: 31166
+SHA256sum: 71f1891afec7fcb1cc4aebb82a5ea0ca4e3b5ab6b001bcefc086992d67a3d76f
+
+Package: enigma2-plugin-extensions-showclock
+Version: 1.0+git1fe9ade078dd-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Push key 'Exit long' to show the clock while watching TV
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/ShowClock
+Installed-Size: 62
+Filename: enigma2-plugin-extensions-showclock_1.0+git1fe9ade078dd-wetek1_wetekpy313.ipk
+Size: 16944
+SHA256sum: 0f61fabef7d759099c03ca17402215c71a157ee587ae45b3eb0c6d24c3cf5848
+
+Package: enigma2-plugin-extensions-zaphistorybrowser
+Version: 1.0+gita89e4398f39b-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Shows a list containing the zapping-history and allows user to zap to the entries or to modify them
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/ZapHistoryBrowser
+Installed-Size: 42
+Filename: enigma2-plugin-extensions-zaphistorybrowser_1.0+gita89e4398f39b-wetek1_wetekpy313.ipk
+Size: 10584
+SHA256sum: 60354664686cdd12094ea8f8d937d47f9080f41f27acc0398e5dd74c540dfac0
+
+Package: enigma2-plugin-extensions-zapstatistic
+Version: 1.0+git4529a4445ef3-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Shows the watched services with some statistic
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/ZapStatistic
+Installed-Size: 84
+Filename: enigma2-plugin-extensions-zapstatistic_1.0+git4529a4445ef3-wetek1_wetekpy313.ipk
+Size: 22866
+SHA256sum: 7ca32275871fdbf15b4e3c11834c93e5e7eb760f83d4a8698624d28e61bc20a6
+
+Package: enigma2-plugin-extensions-werbezapper
+Version: 1.0+gitd1bc63de7fa0-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Werbezapper-Plugin for Enigma2
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/WerbeZapper
+Installed-Size: 43
+Filename: enigma2-plugin-extensions-werbezapper_1.0+gitd1bc63de7fa0-wetek1_wetekpy313.ipk
+Size: 10082
+SHA256sum: f4db2d611cf7564bae34fad7ff52396fb4ab1d0f3de98eceb9bc5ca08fc05d17
+
+Package: enigma2-plugin-extensions-sudoku
+Version: 1.0+gitc3dfff8676eb-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Sudoku Game FHD modded by Lululla
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/Sudoku
+Installed-Size: 372
+Filename: enigma2-plugin-extensions-sudoku_1.0+gitc3dfff8676eb-wetek1_wetekpy313.ipk
+Size: 316452
+SHA256sum: 9803ecded7403132388be9988a4e3c4e90cb66c27f6434b654892bdb9d24a51f
+
+Package: enigma2-plugin-extensions-tetris
+Version: 1.0+git416a21dc056f-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Tetris-Clone HD/FHD modded by Lululla
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/Tetris
+Installed-Size: 211
+Filename: enigma2-plugin-extensions-tetris_1.0+git416a21dc056f-wetek1_wetekpy313.ipk
+Size: 145350
+SHA256sum: ab7a33efe3ad4f5033da4b94245202bce4f623c45c006b1bfa17138fae11fc41
+
+Package: enigma2-plugin-extensions-esame
+Version: 1.0+git3672eccff408-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: eSame game for enigma2
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/eSame
+Installed-Size: 59
+Filename: enigma2-plugin-extensions-esame_1.0+git3672eccff408-wetek1_wetekpy313.ipk
+Size: 26818
+SHA256sum: b039d0ec9ea7006f7521b6d28644d92d0f4744c82932bf14caffa8bf418746c3
+
+Package: enigma2-plugin-extensions-wakeonlan
+Version: 1.0+git63db7bdda552-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: WakeOnLan
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/WakeOnLan
+Installed-Size: 55
+Filename: enigma2-plugin-extensions-wakeonlan_1.0+git63db7bdda552-wetek1_wetekpy313.ipk
+Size: 19442
+SHA256sum: 0a3ee8a6ea46d458525a55b39528d9d8963de8b84a602238914be89b691a9833
+
+Package: enigma2-plugin-extensions-epgexport
+Version: 1.0+git8224b42dd059-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: EPGExport Plugin
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/EPGExport
+Installed-Size: 120
+Filename: enigma2-plugin-extensions-epgexport_1.0+git8224b42dd059-wetek1_wetekpy313.ipk
+Size: 35992
+SHA256sum: 25b189a964c87500d11e3ff8eb63022b865bf9003189e7f627af3abe692a36ad
+
+Package: enigma2-plugin-extensions-remotechannelstreamconverter
+Version: 1.0+git1535b925defd-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Fetch channels from remote bouquets and make them available locally
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/RemoteChannelStreamConverter
+Installed-Size: 117
+Filename: enigma2-plugin-extensions-remotechannelstreamconverter_1.0+git1535b925defd-wetek1_wetekpy313.ipk
+Size: 29534
+SHA256sum: 2327960bc9029a12b54f4716ba9eeb8ec5972027a7f768e7cbb5974f6a750550
+
+Package: enigma2-plugin-extensions-partnerbox
+Version: 1.0+git110102d827c8-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Partnerbox (Remote Bouquets, Channels, Timers and TV Player)
+License: GPL-3.0-or-later
+Homepage: https://github.com/oe-alliance-plugins/Partnerbox
+Installed-Size: 228
+Filename: enigma2-plugin-extensions-partnerbox_1.0+git110102d827c8-wetek1_wetekpy313.ipk
+Size: 54834
+SHA256sum: b8270effe581e336bf20e219043811827cb569a59b438ed555c9592db7b0145e
+
+Package: wetek-python3-cheetah
+Version: 3.4.1~a1+gitb7c452b5531c-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Cheetah template engine for OpenWebif (pure Python)
+License: MIT
+Homepage: https://github.com/CheetahTemplate3/cheetah3
+Installed-Size: 416
+Filename: wetek-python3-cheetah_3.4.1~a1+gitb7c452b5531c-wetek1_wetekpy313.ipk
+Size: 100524
+SHA256sum: 01908e5065fe0fce33486d69997bf306600b6979ad4a25b7525dc6c8b95de4fd
+
+Package: enigma2-plugin-extensions-openwebif
+Version: 2.4.0+git49eb4aa44a98-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023), wetek-python3-cheetah
+Description: Control the WeTek receiver from a browser on your network
+License: GPL-3.0-only
+Homepage: https://github.com/oe-alliance/OpenWebif
+Installed-Size: 4469
+Filename: enigma2-plugin-extensions-openwebif_2.4.0+git49eb4aa44a98-wetek1_wetekpy313.ipk
+Size: 1621270
+SHA256sum: 166ef93d52b70428412aac77f9302b98476d1bab844f78a139bb3fd8fe3df17e
+
+Package: enigma2-plugin-extensions-epgimport
+Version: 1.1+gita32929f2d052-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Import XMLTV programme guides for configured channels
+License: GPL-2.0-only
+Homepage: https://github.com/oe-alliance/XMLTV-Import
+Installed-Size: 320
+Filename: enigma2-plugin-extensions-epgimport_1.1+gita32929f2d052-wetek1_wetekpy313.ipk
+Size: 91572
+SHA256sum: 776795eec39301ca41ad35539b3b2e86192627ad322b466574b79137e16d14c3
+
+Package: enigma2-plugin-systemplugins-m3uiptv
+Version: 1.0+gitc0fa6b61ce8b-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023), enigma2-plugin-extensions-epgimport
+Description: M3U IPTV playlists, provider configuration and channel bouquets
+License: GPL-3.0-only
+Homepage: https://github.com/DimitarCC/iptv-m3u-reader
+Installed-Size: 400
+Filename: enigma2-plugin-systemplugins-m3uiptv_1.0+gitc0fa6b61ce8b-wetek1_wetekpy313.ipk
+Size: 117022
+SHA256sum: de17dd20285cf57d2962ed80a902876e117e094734828618351cab60b4eda8dc
+
+Package: enigma2-plugin-systemplugins-toolkit
+Version: 1.0+gitc891f398db86-wetek1
+Architecture: wetekpy313
+Maintainer: WeTek Play 2 community port
+Section: enigma2
+Priority: optional
+Depends: wetek-enigma2-api (= 20261023)
+Description: Shared Enigma2 helpers required by SimpleRSS
+License: CC-BY-NC-SA-3.0
+Homepage: https://github.com/oe-alliance-plugins/Toolkit
+Installed-Size: 7
+Filename: enigma2-plugin-systemplugins-toolkit_1.0+gitc891f398db86-wetek1_wetekpy313.ipk
+Size: 3140
+SHA256sum: e246990ddf6b4c3fd1b1abb0d3292a3ae09b413a1b4786b2bd88e437a861683b
+

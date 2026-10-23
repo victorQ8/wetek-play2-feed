@@ -1,0 +1,8 @@
+{
+  "AutomaticVolumeAdjustment": "Its session-start hook fails against the current VolumeControl API. Current Enigma2 has built-in volume adjustment; this legacy add-on is excluded.",
+  "BirthdayReminder": "Upstream network sharing deserializes unauthenticated pickle data. Not published pending safe serialization or removal of that feature.",
+  "EPGTranslator": "No-playing-service screen faults were investigated; the external translation request also failed on the receiver. Not published.",
+  "FTPBrowser": "Additional Paramiko dependency and remote-server operations have not been validated; the bundled FileCommander remains available.",
+  "WeatherPlugin": "External weather provider and credentials have not been validated.",
+  "BouquetMakerXtream": "A redistributable license was not established during this audit. M3UIPTV is the validated native playlist alternative."
+}
